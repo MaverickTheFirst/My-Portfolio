@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 32" width="32" height="32">
-  <text x="22" y="22" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 46" width="46" height="46">
+  <text x="30" y="31" 
         font-family="system-ui, -apple-system, sans-serif" 
-        font-size="16" 
+        font-size="22" 
         font-weight="900" 
         fill="#00ff41" 
         text-anchor="middle">&gt; DB</text>
