@@ -64,7 +64,7 @@ export default function Hero() {
 
       <div className="hero-content">
         <p className="hero-greeting">
-          <span className="prompt">&gt; </span>HELLO, WORLD_
+          <span className="prompt">&gt; </span>HELLO, WORLD
         </p>
 
         <pre className="hero-ascii" aria-label="Deeptangshu Banerjee">{ASCII_ART}</pre>
@@ -76,9 +76,9 @@ export default function Hero() {
         </p>
 
         <p className="hero-desc">
-          // Passionate about breaking &amp; building things.
+          // Finding vulnerabilities &amp; building solutions.
           <br />
-          // Cybersecurity · AI · Web Development
+          // Turning curiosity into code.
         </p>
 
         <div className="hero-buttons">
