@@ -121,6 +121,11 @@ button {
   font-family: inherit;
 }
 
+/* Force pointer cursor on all interactive elements */
+a, button, .btn, [role="button"], input[type="submit"], input[type="button"], select {
+  cursor: pointer !important;
+}
+
 /* ===== UTILITIES ===== */
 .container {
   max-width: var(--container-max);

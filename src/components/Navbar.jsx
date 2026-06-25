@@ -6,7 +6,6 @@ const NAV_ITEMS = [
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'testimonials', label: 'Testimonials' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -22,12 +21,14 @@ export default function Navbar() {
       const sections = NAV_ITEMS.map(item => document.getElementById(item.id));
       const scrollPos = window.scrollY + 200;
 
+      let currentActive = '';
       for (let i = sections.length - 1; i >= 0; i--) {
         if (sections[i] && sections[i].offsetTop <= scrollPos) {
-          setActiveSection(NAV_ITEMS[i].id);
+          currentActive = NAV_ITEMS[i].id;
           break;
         }
       }
+      setActiveSection(currentActive);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -51,7 +52,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="navbar-inner">
         <div className="navbar-logo" onClick={scrollToTop} role="button" tabIndex={0}>
-          {'> DB_'}
+          {'> DB'}
         </div>
 
         <button
@@ -76,9 +77,6 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <a className="btn btn-primary navbar-cta" onClick={() => scrollTo('contact')}>
-            ./hire_me.sh
-          </a>
         </div>
       </div>
     </nav>
