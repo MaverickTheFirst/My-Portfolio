@@ -1,3 +1,6 @@
+import TiltCard from './TiltCard';
+import TerminalHeader from './TerminalHeader';
+import ScrambleText from './ScrambleText';
 import './Experience.css';
 
 const EXPERIENCES = [
@@ -10,7 +13,7 @@ const EXPERIENCES = [
   },
   {
     date: '2024 — 2028',
-    title: 'B.Tech in Computer Science & Engineering',
+    title: 'B.Tech in CSE',
     subtitle: 'Kalinga Institute of Industrial Technology (KIIT)',
     description:
       'Pursuing a Bachelor\'s degree in CSE. Active member of the GeeksforGeeks KIIT Student Chapter — Cybersecurity Department. Participating in CTFs, hackathons, and tech events.',
@@ -29,8 +32,11 @@ export default function Experience() {
     <section className="section" id="experience">
       <div className="container">
         <div className="section-header reveal">
-          <p className="section-label">My Journey</p>
-          <h2 className="section-title">Education & Experience</h2>
+          <TerminalHeader command="git log --oneline --graph" />
+          <p className="section-label">// Timeline</p>
+          <h2 className="section-title">
+            <ScrambleText text="Education & Experience" tag="span" />
+          </h2>
           <p className="section-subtitle">
             A timeline of my academic journey and professional growth.
           </p>
@@ -43,12 +49,12 @@ export default function Experience() {
               className={`timeline-item reveal reveal-delay-${index + 1}`}
             >
               <div className="timeline-node" />
-              <div className="glass-card timeline-card">
+              <TiltCard className="timeline-card">
                 <span className="timeline-date">{exp.date}</span>
                 <h3 className="timeline-title">{exp.title}</h3>
                 <p className="timeline-subtitle">{exp.subtitle}</p>
                 <p className="timeline-desc">{exp.description}</p>
-              </div>
+              </TiltCard>
             </div>
           ))}
         </div>

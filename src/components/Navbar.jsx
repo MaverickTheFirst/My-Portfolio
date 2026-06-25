@@ -51,7 +51,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="navbar-inner">
         <div className="navbar-logo" onClick={scrollToTop} role="button" tabIndex={0}>
-          {'<DB />'}
+          {'> DB_'}
         </div>
 
         <button
@@ -77,7 +77,7 @@ export default function Navbar() {
             </a>
           ))}
           <a className="btn btn-primary navbar-cta" onClick={() => scrollTo('contact')}>
-            Hire Me
+            ./hire_me.sh
           </a>
         </div>
       </div>

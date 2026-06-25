@@ -1,3 +1,5 @@
+import TerminalHeader from './TerminalHeader';
+import ScrambleText from './ScrambleText';
 import './About.css';
 
 export default function About() {
@@ -5,8 +7,11 @@ export default function About() {
     <section className="about section" id="about">
       <div className="container">
         <div className="section-header reveal">
-          <p className="section-label">Get To Know Me</p>
-          <h2 className="section-title">About Me</h2>
+          <TerminalHeader command="cat about.txt" />
+          <p className="section-label">// Get To Know Me</p>
+          <h2 className="section-title">
+            <ScrambleText text="About Me" tag="span" />
+          </h2>
           <p className="section-subtitle">
             A passionate student at the intersection of cybersecurity, AI, and software development.
           </p>
@@ -14,7 +19,9 @@ export default function About() {
 
         <div className="about-grid">
           <div className="about-text reveal">
-            <h3>Building the future, one line of code at a time</h3>
+            <h3>
+              <ScrambleText text="Building the future, one exploit at a time" tag="span" />
+            </h3>
             <p>
               I&apos;m <span className="about-highlight">Deeptangshu Banerjee</span>, a Computer Science
               and Engineering student at <span className="about-highlight">KIIT University</span> with
@@ -58,31 +65,34 @@ export default function About() {
                 <span className="code-comment">{'// about_me.js'}</span>
                 <br />
                 <span className="code-keyword">const</span>{' '}
-                <span className="code-property">deeptangshu</span>{' '}
+                <span className="code-property">hacker</span>{' '}
                 <span className="code-bracket">= {'{'}</span>
                 <br />
                 {'  '}<span className="code-property">name</span>:{' '}
-                <span className="code-string">&quot;Deeptangshu Banerjee&quot;</span>,
+                <span className="code-string">&quot;Deeptangshu&quot;</span>,
+                <br />
+                {'  '}<span className="code-property">alias</span>:{' '}
+                <span className="code-string">&quot;MaverickTheFirst&quot;</span>,
                 <br />
                 {'  '}<span className="code-property">role</span>:{' '}
-                <span className="code-string">&quot;CS Student&quot;</span>,
+                <span className="code-string">&quot;CSE Student&quot;</span>,
                 <br />
-                {'  '}<span className="code-property">university</span>:{' '}
-                <span className="code-string">&quot;KIIT University&quot;</span>,
+                {'  '}<span className="code-property">threat_level</span>:{' '}
+                <span className="code-string">&quot;MAXIMUM&quot;</span>,
                 <br />
-                {'  '}<span className="code-property">passions</span>:{' '}
+                {'  '}<span className="code-property">skills</span>:{' '}
                 <span className="code-bracket">[</span>
                 <br />
                 {'    '}<span className="code-string">&quot;Cybersecurity&quot;</span>,
                 <br />
                 {'    '}<span className="code-string">&quot;AI / ML&quot;</span>,
                 <br />
-                {'    '}<span className="code-string">&quot;Web Development&quot;</span>,
+                {'    '}<span className="code-string">&quot;Web Dev&quot;</span>,
                 <br />
                 {'  '}<span className="code-bracket">]</span>,
                 <br />
-                {'  '}<span className="code-property">openToWork</span>:{' '}
-                <span className="code-keyword">true</span>,
+                {'  '}<span className="code-property">status</span>:{' '}
+                <span className="code-string">&quot;ACTIVE&quot;</span>,
                 <br />
                 <span className="code-bracket">{'};'}</span>
               </code>

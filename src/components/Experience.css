@@ -12,7 +12,8 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent-purple), var(--accent-blue), var(--accent-cyan));
+  background: linear-gradient(to bottom, var(--neon-green), var(--neon-cyan), var(--neon-pink));
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
 }
 
 .timeline-item {
@@ -31,10 +32,11 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--gradient-primary);
+  background: var(--neon-green);
   border: 3px solid var(--bg-primary);
   z-index: 2;
-  animation: glow 3s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.6), 0 0 30px rgba(0, 255, 65, 0.3);
+  animation: borderGlow 3s ease-in-out infinite;
 }
 
 .timeline-card {
@@ -44,32 +46,36 @@
 .timeline-date {
   display: inline-block;
   padding: 4px 14px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  border-radius: 20px;
-  font-size: 0.8rem;
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent-purple-light);
+  color: var(--neon-green);
   margin-bottom: 14px;
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.3);
 }
 
 .timeline-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 6px;
 }
 
 .timeline-subtitle {
-  font-size: 0.95rem;
-  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--neon-cyan);
   font-weight: 500;
   margin-bottom: 12px;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
 }
 
 .timeline-desc {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.7;
 }

@@ -15,7 +15,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <p className="footer-text">
-          &copy; {new Date().getFullYear()} <span>Deeptangshu Banerjee</span>. Built with React & ❤️
+          &copy; {new Date().getFullYear()} <span>Deeptangshu Banerjee</span> // Built with React &amp; ☕
         </p>
 
         <div className="footer-socials">
@@ -41,6 +41,9 @@ export default function Footer() {
           ↑
         </button>
       </div>
+      <p className="footer-easter-hint">
+        // Hint: Try the Konami Code ↑↑↓↓←→←→BA
+      </p>
     </footer>
   );
 }

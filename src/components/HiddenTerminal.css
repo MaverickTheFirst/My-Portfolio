@@ -1,0 +1,133 @@
+.hidden-terminal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.hidden-terminal {
+  width: 90%;
+  max-width: 700px;
+  height: 500px;
+  background: #0a0a0a;
+  border: 1px solid #00ff41;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.3), 0 0 60px rgba(0, 255, 65, 0.1);
+  animation: fadeInUp 0.3s ease;
+}
+
+.hidden-terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0, 255, 65, 0.05);
+  border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.hidden-terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.hidden-terminal-dot:nth-child(1) { background: #ff5f57; }
+.hidden-terminal-dot:nth-child(2) { background: #ffbd2e; }
+.hidden-terminal-dot:nth-child(3) { background: #28c840; }
+
+.hidden-terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+  flex: 1;
+}
+
+.hidden-terminal-close {
+  background: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  padding: 0 4px;
+  font-family: var(--font-mono);
+  transition: color 0.2s;
+}
+
+.hidden-terminal-close:hover {
+  color: #ff5f57;
+}
+
+.hidden-terminal-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #00ff41;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 65, 0.3) transparent;
+}
+
+.hidden-terminal-body::-webkit-scrollbar {
+  width: 4px;
+}
+.hidden-terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 65, 0.3);
+}
+
+.terminal-output-line {
+  margin-bottom: 2px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminal-output-line.system {
+  color: var(--text-muted);
+}
+
+.terminal-output-line.cyan {
+  color: #0ff;
+}
+
+.terminal-output-line.pink {
+  color: #ff0080;
+}
+
+.terminal-output-line.yellow {
+  color: #ffff00;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.terminal-prompt {
+  color: #0ff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.terminal-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #00ff41;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  caret-color: #00ff41;
+  padding: 0;
+  margin-left: 4px;
+}

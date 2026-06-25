@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import TiltCard from './TiltCard';
+import TerminalHeader from './TerminalHeader';
+import ScrambleText from './ScrambleText';
 import './Testimonials.css';
 
 const TESTIMONIALS = [
@@ -38,15 +41,18 @@ export default function Testimonials() {
     <section className="testimonials section" id="testimonials">
       <div className="container">
         <div className="section-header reveal">
-          <p className="section-label">What Others Say</p>
-          <h2 className="section-title">Testimonials</h2>
+          <TerminalHeader command='cat /var/log/testimonials.log' />
+          <p className="section-label">// Intercepted Transmissions</p>
+          <h2 className="section-title">
+            <ScrambleText text="Testimonials" tag="span" />
+          </h2>
           <p className="section-subtitle">
             Kind words from mentors, colleagues, and collaborators.
           </p>
         </div>
 
         <div className="testimonials-slider reveal">
-          <div className="glass-card testimonial-card" key={activeIndex}>
+          <TiltCard className="testimonial-card" glowColor="255, 0, 128" key={activeIndex}>
             <span className="testimonial-quote-icon">&ldquo;</span>
             <p className="testimonial-text">{current.text}</p>
             <div className="testimonial-author">
@@ -54,7 +60,7 @@ export default function Testimonials() {
               <span className="testimonial-name">{current.name}</span>
               <span className="testimonial-role">{current.role}</span>
             </div>
-          </div>
+          </TiltCard>
 
           <div className="testimonial-dots">
             {TESTIMONIALS.map((_, index) => (

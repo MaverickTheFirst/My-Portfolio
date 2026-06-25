@@ -1,3 +1,6 @@
+import TiltCard from './TiltCard';
+import TerminalHeader from './TerminalHeader';
+import ScrambleText from './ScrambleText';
 import './Projects.css';
 
 const PROJECTS = [
@@ -17,8 +20,11 @@ export default function Projects() {
     <section className="projects section" id="projects">
       <div className="container">
         <div className="section-header reveal">
-          <p className="section-label">My Work</p>
-          <h2 className="section-title">Featured Projects</h2>
+          <TerminalHeader command="./scan_projects --verbose" />
+          <p className="section-label">// Deployed Exploits</p>
+          <h2 className="section-title">
+            <ScrambleText text="Featured Projects" tag="span" />
+          </h2>
           <p className="section-subtitle">
             Projects that showcase my skills in cybersecurity, development, and problem-solving.
           </p>
@@ -26,14 +32,15 @@ export default function Projects() {
 
         <div className="projects-grid">
           {PROJECTS.map((project, index) => (
-            <div
+            <TiltCard
               key={project.title}
-              className={`glass-card project-card reveal reveal-delay-${index + 1}`}
+              className={`project-card reveal reveal-delay-${index + 1}`}
+              glowColor="0, 255, 255"
             >
               <div className="project-card-header">
                 <div className="project-card-icon">{project.icon}</div>
                 {project.featured && (
-                  <span className="project-featured">Featured</span>
+                  <span className="project-featured">★ Featured</span>
                 )}
                 <h3 className="project-card-title">{project.title}</h3>
               </div>
@@ -54,11 +61,11 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="project-link"
                   >
-                    <span className="project-link-icon">⚡</span> GitHub
+                    <span className="project-link-icon">⚡</span> ./view_source.sh
                   </a>
                 )}
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>

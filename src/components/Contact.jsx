@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import TiltCard from './TiltCard';
+import TerminalHeader from './TerminalHeader';
+import ScrambleText from './ScrambleText';
 import './Contact.css';
 
 const CONTACT_LINKS = [
@@ -33,11 +36,10 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
-      setStatus({ type: 'error', text: 'Please fill in all fields.' });
+      setStatus({ type: 'error', text: '[ERROR] All fields required.' });
       return;
     }
-    // In a real app, send to a backend/email service
-    setStatus({ type: 'success', text: 'Message sent! I\'ll get back to you soon. 🚀' });
+    setStatus({ type: 'success', text: '[OK] Message transmitted successfully. 📡' });
     setFormData({ name: '', email: '', message: '' });
     setTimeout(() => setStatus(null), 5000);
   };
@@ -46,16 +48,21 @@ export default function Contact() {
     <section className="section" id="contact">
       <div className="container">
         <div className="section-header reveal">
-          <p className="section-label">Get In Touch</p>
-          <h2 className="section-title">Contact Me</h2>
+          <TerminalHeader command="ssh deeptangshu@contact --secure" />
+          <p className="section-label">// Establish Connection</p>
+          <h2 className="section-title">
+            <ScrambleText text="Contact Me" tag="span" />
+          </h2>
           <p className="section-subtitle">
-            Have a question or want to work together? Feel free to reach out!
+            Have a question or want to work together? Initiate a secure connection.
           </p>
         </div>
 
         <div className="contact-grid">
           <div className="contact-info reveal">
-            <h3>Let&apos;s connect</h3>
+            <h3>
+              <ScrambleText text="Let's connect" tag="span" />
+            </h3>
             <p>
               I&apos;m always open to discussing new projects, creative ideas, or opportunities
               to be part of your vision. Whether it&apos;s a collaboration, internship, or just a
@@ -81,10 +88,10 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="glass-card contact-form-card reveal reveal-delay-2">
+          <TiltCard className="contact-form-card reveal reveal-delay-2">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label className="form-label" htmlFor="contact-name">Your Name</label>
+                <label className="form-label" htmlFor="contact-name">$ your_name</label>
                 <input
                   id="contact-name"
                   className="form-input"
@@ -97,7 +104,7 @@ export default function Contact() {
               </div>
 
               <div className="form-group">
-                <label className="form-label" htmlFor="contact-email">Your Email</label>
+                <label className="form-label" htmlFor="contact-email">$ your_email</label>
                 <input
                   id="contact-email"
                   className="form-input"
@@ -110,19 +117,19 @@ export default function Contact() {
               </div>
 
               <div className="form-group">
-                <label className="form-label" htmlFor="contact-message">Message</label>
+                <label className="form-label" htmlFor="contact-message">$ message</label>
                 <textarea
                   id="contact-message"
                   className="form-textarea"
                   name="message"
-                  placeholder="Tell me about your project or idea..."
+                  placeholder="echo 'Your message here...'"
                   value={formData.message}
                   onChange={handleChange}
                 />
               </div>
 
               <button type="submit" className="btn btn-primary form-submit">
-                <span>🚀</span> Send Message
+                ./send_message.sh
               </button>
 
               {status && (
@@ -131,7 +138,7 @@ export default function Contact() {
                 </div>
               )}
             </form>
-          </div>
+          </TiltCard>
         </div>
       </div>
     </section>
