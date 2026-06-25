@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import BootScreen from './components/BootScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -98,6 +99,7 @@ function App() {
         onClose={() => setTerminalOpen(false)}
       />
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
