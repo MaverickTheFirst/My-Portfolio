@@ -82,12 +82,22 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <button className="btn btn-primary" onClick={() => scrollTo('projects')}>
-            ./view_projects.sh
-          </button>
-          <button className="btn btn-secondary" onClick={() => scrollTo('contact')}>
-            ./contact_me.sh
-          </button>
+          <a
+            className="btn btn-primary"
+            href="https://github.com/MaverickTheFirst"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ./github.sh
+          </a>
+          <a
+            className="btn btn-secondary"
+            href="https://www.linkedin.com/in/deeptangshu-banerjee-ba98352b4/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ./linkedin.sh
+          </a>
         </div>
       </div>
 
