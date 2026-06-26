@@ -14,7 +14,7 @@
   font-size: 0.8rem;
   color: #00ff41;
   overflow: hidden;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, background 0.4s ease;
 }
 
 .boot-screen.hiding {
@@ -22,48 +22,106 @@
   transform: scale(1.05);
 }
 
-.boot-screen.hidden {
-  display: none;
+.boot-screen.denied {
+  background: #0a0000;
 }
 
+/* ===== Boot Lines ===== */
 .boot-line {
   opacity: 0;
   animation: bootLineAppear 0.1s ease forwards;
   text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
   margin-bottom: 4px;
   white-space: nowrap;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.boot-line.success {
-  color: #0f0;
+.boot-line.success { color: #0f0; }
+.boot-line.error { color: #ff0040; }
+.boot-line.warning { color: #ffff00; }
+.boot-line.cyan { color: #0ff; }
+.boot-line.accent { color: #ff0080; }
+
+.boot-line.denied-line {
+  color: #ff0040 !important;
+  text-shadow: 0 0 8px rgba(255, 0, 64, 0.5) !important;
 }
 
-.boot-line.error {
-  color: #ff0040;
+/* ===== Hold Area ===== */
+.hold-area {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  animation: fadeInHold 0.5s ease forwards;
 }
 
-.boot-line.warning {
-  color: #ffff00;
+/* ===== Hold Bar (Old School) ===== */
+.hold-bar-container {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 44px;
+  background: #000;
+  border: 2px solid #00ff41;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  overflow: hidden;
 }
 
-.boot-line.cyan {
-  color: #0ff;
+.hold-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #00ff41;
+  transition: width 0.05s linear;
 }
 
-.boot-line.accent {
-  color: #ff0080;
+.hold-bar-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #00ff41;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.boot-access.boot-line {
+/* ===== Result Text ===== */
+.boot-result {
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
-  margin-top: 24px;
   opacity: 0;
-  animation: bootAccessGranted 0.5s ease forwards;
+  animation: bootResultAppear 0.5s ease forwards;
+}
+
+.granted-text {
+  color: #00ff41;
   text-shadow: 0 0 20px rgba(0, 255, 65, 0.8), 0 0 40px rgba(0, 255, 65, 0.4);
 }
 
+.denied-text {
+  color: #ff0040;
+  text-shadow: 0 0 20px rgba(255, 0, 64, 0.8), 0 0 40px rgba(255, 0, 64, 0.4);
+  animation: bootResultAppear 0.3s ease forwards, deniedShake 0.4s ease;
+}
+
+/* ===== Keyframes ===== */
 @keyframes bootLineAppear {
   from {
     opacity: 0;
@@ -75,7 +133,12 @@
   }
 }
 
-@keyframes bootAccessGranted {
+@keyframes fadeInHold {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bootResultAppear {
   0% {
     opacity: 0;
     transform: scale(0.8);
@@ -88,4 +151,13 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes deniedShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-12px); }
+  40% { transform: translateX(12px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
 }

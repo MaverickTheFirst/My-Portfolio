@@ -13,14 +13,14 @@ export default function About() {
             <ScrambleText text="About Me" tag="span" />
           </h2>
           <p className="section-subtitle">
-            A passionate student at the intersection of cybersecurity, AI, and software development.
+            A passionate student at the intersection of cybersecurity and software development.
           </p>
         </div>
 
         <div className="about-grid">
           <div className="about-text reveal">
             <h3>
-              <ScrambleText text="THE MIND BEHIND THE TERMINAL" tag="span" speed={25} />
+              <ScrambleText text="THE MIND BEHIND THE TERMINAL" tag="span" speed={30} />
             </h3>
             <p>
               Hi, I&apos;m <span className="about-highlight">Deeptangshu Banerjee</span>, a Computer Science
