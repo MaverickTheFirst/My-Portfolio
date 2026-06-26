@@ -20,16 +20,16 @@ export default function About() {
         <div className="about-grid">
           <div className="about-text reveal">
             <h3>
-              <ScrambleText text="Building the future, one exploit at a time" tag="span" />
+              <ScrambleText text="THE MIND BEHIND THE TERMINAL" tag="span" speed={25} />
             </h3>
             <p>
-              I&apos;m <span className="about-highlight">Deeptangshu Banerjee</span>, a Computer Science
+              Hi, I&apos;m <span className="about-highlight">Deeptangshu Banerjee</span>, a Computer Science
               and Engineering student at <span className="about-highlight">KIIT University</span> with
               a strong passion for technology, cybersecurity, and software development.
             </p>
             <p>
               As a member of the cybersecurity department of the{' '}
-              <span className="about-highlight">GeeksforGeeks KIIT Student Chapter Society</span>,
+              <span className="about-highlight">GeeksforGeeks KIIT Student Chapter society</span>,
               I actively engage in security research, Capture The Flag (CTF) competitions, and
               hands-on learning experiences.
             </p>
@@ -37,21 +37,9 @@ export default function About() {
               I believe technology is most impactful when it solves real-world problems, which
               motivates me to continuously learn, build, and contribute to meaningful initiatives.
             </p>
-
-            <div className="about-stats">
-              <div className="about-stat">
-                <span className="about-stat-number">15+</span>
-                <span className="about-stat-label">Skills</span>
-              </div>
-              <div className="about-stat">
-                <span className="about-stat-number">1+</span>
-                <span className="about-stat-label">Projects</span>
-              </div>
-              <div className="about-stat">
-                <span className="about-stat-number">1</span>
-                <span className="about-stat-label">Internship</span>
-              </div>
-            </div>
+            <p>
+              <span className="about-prompt">&gt; </span><span className="about-highlight">Think like an attacker. Build like a defender</span>
+            </p>
           </div>
 
           <div className="about-visual reveal reveal-delay-2">
@@ -65,14 +53,14 @@ export default function About() {
                 <span className="code-comment">{'// about_me.js'}</span>
                 <br />
                 <span className="code-keyword">const</span>{' '}
-                <span className="code-property">hacker</span>{' '}
+                <span className="code-property">about_me</span>{' '}
                 <span className="code-bracket">= {'{'}</span>
                 <br />
                 {'  '}<span className="code-property">name</span>:{' '}
-                <span className="code-string">&quot;Deeptangshu&quot;</span>,
+                <span className="code-string">&quot;Deeptangshu Banerjee&quot;</span>,
                 <br />
                 {'  '}<span className="code-property">alias</span>:{' '}
-                <span className="code-string">&quot;MaverickTheFirst&quot;</span>,
+                <span className="code-string">&quot;Maverick&quot;</span>,
                 <br />
                 {'  '}<span className="code-property">role</span>:{' '}
                 <span className="code-string">&quot;CSE Student&quot;</span>,
@@ -85,9 +73,13 @@ export default function About() {
                 <br />
                 {'    '}<span className="code-string">&quot;Cybersecurity&quot;</span>,
                 <br />
-                {'    '}<span className="code-string">&quot;AI / ML&quot;</span>,
+                {'    '}<span className="code-string">&quot;Software Development&quot;</span>,
                 <br />
-                {'    '}<span className="code-string">&quot;Web Dev&quot;</span>,
+                {'    '}<span className="code-string">&quot;Web Development&quot;</span>,
+                <br />
+                {'    '}<span className="code-string">&quot;Problem Solving&quot;</span>,
+                <br />
+                {'    '}<span className="code-string">&quot;Critical Thinking&quot;</span>,
                 <br />
                 {'  '}<span className="code-bracket">]</span>,
                 <br />

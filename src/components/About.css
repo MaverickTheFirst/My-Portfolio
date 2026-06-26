@@ -43,20 +43,15 @@
   text-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
 }
 
+.about-prompt {
+  color: var(--neon-cyan);
+}
+
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-top: 32px;
-}
-
-.about-stat {
-  text-align: center;
-  padding: 20px 12px;
-  border-radius: var(--radius-md);
-  background: rgba(0, 255, 65, 0.02);
-  border: 1px solid var(--border-glass);
-  transition: var(--transition-base);
 }
 
 .about-stat:hover {
