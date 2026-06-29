@@ -1,4 +1,3 @@
-import { useState, useEffect, useRef } from 'react';
 import TiltCard from './TiltCard';
 import TerminalHeader from './TerminalHeader';
 import ScrambleText from './ScrambleText';
@@ -6,89 +5,66 @@ import './Skills.css';
 
 const SKILL_CATEGORIES = [
   {
-    icon: '💻',
+    icon: '⟨/⟩',
     title: 'Programming',
     skills: [
-      { name: 'C / C++', pct: 85 },
-      { name: 'Python', pct: 80 },
-      { name: 'Java', pct: 75 },
-      { name: 'JavaScript', pct: 78 },
-      { name: 'SQL', pct: 70 },
+      { name: 'C / C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
+      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+      { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+      { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+      { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
     ],
   },
   {
     icon: '🌐',
-    title: 'Frontend Dev',
+    title: 'Frontend',
     skills: [
-      { name: 'HTML5 / CSS3', pct: 85 },
-      { name: 'JavaScript', pct: 78 },
-      { name: 'React.js', pct: 72 },
-      { name: 'Responsive Design', pct: 80 },
+      { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
+      { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
     ],
   },
   {
     icon: '🛡️',
     title: 'Cybersecurity',
     skills: [
-      { name: 'CTF Challenges', pct: 82 },
-      { name: 'Web Security', pct: 78 },
-      { name: 'Network Security', pct: 75 },
-      { name: 'OSINT', pct: 70 },
-      { name: 'Vuln Assessment', pct: 73 },
+      { name: 'Burp Suite', icon: null },
+      { name: 'Wireshark', icon: null },
+      { name: 'Nmap', icon: null },
+      { name: 'Metasploit', icon: null },
+      { name: 'OSINT', icon: null },
     ],
   },
   {
     icon: '🔧',
-    title: 'Tools & Tech',
+    title: 'Tools & Platforms',
     skills: [
-      { name: 'Git / GitHub', pct: 85 },
-      { name: 'Linux', pct: 80 },
-      { name: 'Wireshark', pct: 72 },
-      { name: 'Burp Suite', pct: 68 },
-      { name: 'Nmap', pct: 75 },
+      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+      { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
+      { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
+      { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
     ],
   },
   {
     icon: '🤖',
-    title: 'AI & Soft Skills',
+    title: 'AI & Other',
     skills: [
-      { name: 'Prompt Engineering', pct: 82 },
-      { name: 'Generative AI', pct: 70 },
-      { name: 'ML Fundamentals', pct: 65 },
-      { name: 'Leadership', pct: 85 },
-      { name: 'Communication', pct: 88 },
+      { name: 'Prompt Eng.', icon: null },
+      { name: 'Gen AI', icon: null },
+      { name: 'ML Basics', icon: null },
+      { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' },
     ],
   },
 ];
 
-function SkillBar({ name, pct }) {
-  const [animate, setAnimate] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setAnimate(true);
-      },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
+/* Fallback icon for cybersecurity / non-devicon skills */
+function ShieldIcon() {
   return (
-    <div className="skill-item" ref={ref}>
-      <div className="skill-item-header">
-        <span className="skill-item-name">{name}</span>
-        <span className="skill-item-pct">{animate ? `${pct}%` : '0%'}</span>
-      </div>
-      <div className="skill-bar-track">
-        <div
-          className={`skill-bar-fill ${animate ? 'animate' : ''}`}
-          style={{ width: animate ? `${pct}%` : '0%' }}
-        />
-      </div>
-    </div>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
   );
 }
 
@@ -107,17 +83,33 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="skills-grid">
-          {SKILL_CATEGORIES.map((category, index) => (
+        <div className="skills-rows">
+          {SKILL_CATEGORIES.map((category, catIdx) => (
             <TiltCard
               key={category.title}
-              className={`skill-card reveal reveal-delay-${index + 1}`}
+              className={`skills-row-card reveal reveal-delay-${catIdx + 1}`}
             >
-              <span className="skill-card-icon">{category.icon}</span>
-              <h3 className="skill-card-title">{category.title}</h3>
-              <div className="skill-items">
+              <div className="skills-row-label">
+                <span className="skills-row-icon">{category.icon}</span>
+                <span className="skills-row-title">{category.title}</span>
+              </div>
+              <div className="skills-row-chips">
                 {category.skills.map((skill) => (
-                  <SkillBar key={skill.name} name={skill.name} pct={skill.pct} />
+                  <span key={skill.name} className="skill-chip">
+                    {skill.icon ? (
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        className="skill-chip-icon"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="skill-chip-icon skill-chip-fallback">
+                        <ShieldIcon />
+                      </span>
+                    )}
+                    {skill.name}
+                  </span>
                 ))}
               </div>
             </TiltCard>
