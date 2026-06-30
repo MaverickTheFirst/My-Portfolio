@@ -8,9 +8,9 @@ const SKILL_CATEGORIES = [
     icon: '⟨/⟩',
     title: 'Programming',
     skills: [
-      { name: 'C / C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
-      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+      { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' },
       { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
       { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
       { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
     ],
@@ -23,17 +23,18 @@ const SKILL_CATEGORIES = [
       { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
       { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
       { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' },
     ],
   },
   {
     icon: '🛡️',
     title: 'Cybersecurity',
     skills: [
-      { name: 'Burp Suite', icon: null },
-      { name: 'Wireshark', icon: null },
-      { name: 'Nmap', icon: null },
-      { name: 'Metasploit', icon: null },
+      { name: 'Network Security', icon: null },
+      { name: 'Web Security', icon: null },
+      { name: 'Penetration Testing', icon: null },
       { name: 'OSINT', icon: null },
+      { name: 'Cryptography', icon: null },
     ],
   },
   {
@@ -54,7 +55,6 @@ const SKILL_CATEGORIES = [
       { name: 'Prompt Eng.', icon: null },
       { name: 'Gen AI', icon: null },
       { name: 'ML Basics', icon: null },
-      { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' },
     ],
   },
 ];
