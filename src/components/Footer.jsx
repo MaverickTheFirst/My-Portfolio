@@ -67,7 +67,7 @@ export default function Footer() {
         </button>
       </div>
       <p className="footer-easter-hint">
-        // Hint: Try the Konami Code ↑↑↓↓←→←→BA
+        // Hint: Try the Konami Code [↑ ↑ ↓ ↓ ← → ← → B A]
       </p>
     </footer>
   );
