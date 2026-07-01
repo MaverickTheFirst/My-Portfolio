@@ -16,23 +16,7 @@
   overflow: hidden;
 }
 
-/* Top accent line on hover */
-.skills-row-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
-  opacity: 0;
-  transition: var(--transition-base);
-  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-}
 
-.skills-row-card:hover::before {
-  opacity: 1;
-}
 
 /* ===== Category Label (left side) ===== */
 .skills-row-label {
@@ -94,8 +78,8 @@
 
 /* Icon inside chip */
 .skill-chip-icon {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,9 +87,10 @@
 }
 
 .skill-chip-icon img,
-img.skill-chip-icon {
-  width: 18px;
-  height: 18px;
+img.skill-chip-icon,
+.skill-chip-icon svg {
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   filter: grayscale(0.3) brightness(1.1);
   transition: filter 0.25s ease;
@@ -124,6 +109,18 @@ img.skill-chip-icon {
 }
 
 .skill-chip:hover .skill-chip-fallback {
+  opacity: 1;
+}
+
+/* Custom green PNG icon (Network Security) to match the color/opacity behavior of null icons */
+img.skill-chip-icon.green-png-icon {
+  filter: none;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.skill-chip:hover img.skill-chip-icon.green-png-icon {
+  filter: drop-shadow(0 0 3px rgba(0, 255, 65, 0.4));
   opacity: 1;
 }
 

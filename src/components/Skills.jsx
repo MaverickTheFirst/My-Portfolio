@@ -30,11 +30,11 @@ const SKILL_CATEGORIES = [
     icon: '🛡️',
     title: 'Cybersecurity',
     skills: [
-      { name: 'Network Security', icon: null },
-      { name: 'Web Security', icon: null },
-      { name: 'Penetration Testing', icon: null },
-      { name: 'OSINT', icon: null },
-      { name: 'Cryptography', icon: null },
+      { name: 'Network Security', icon: '/network-security.png' },
+      { name: 'Web Security', icon: '/web-security.png' },
+      { name: 'Penetration Testing', icon: '/penetration-testing.png' },
+      { name: 'OSINT', icon: '/osint.png' },
+      { name: 'Cryptography', icon: '/cryptography.png' },
     ],
   },
   {
@@ -48,21 +48,12 @@ const SKILL_CATEGORIES = [
       { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
     ],
   },
-  {
-    icon: '🤖',
-    title: 'AI & Other',
-    skills: [
-      { name: 'Prompt Eng.', icon: null },
-      { name: 'Gen AI', icon: null },
-      { name: 'ML Basics', icon: null },
-    ],
-  },
 ];
 
 /* Fallback icon for cybersecurity / non-devicon skills */
 function ShieldIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
     </svg>
   );
@@ -79,7 +70,7 @@ export default function Skills() {
             <ScrambleText text="Skills & Technologies" tag="span" />
           </h2>
           <p className="section-subtitle">
-            A diverse toolkit spanning programming, cybersecurity, web development, and AI.
+            A diverse toolkit spanning programming, cybersecurity, frontend development, and development tools.
           </p>
         </div>
 
@@ -96,11 +87,11 @@ export default function Skills() {
               <div className="skills-row-chips">
                 {category.skills.map((skill) => (
                   <span key={skill.name} className="skill-chip">
-                    {skill.icon ? (
+                    {typeof skill.icon === 'string' ? (
                       <img
                         src={skill.icon}
                         alt={skill.name}
-                        className="skill-chip-icon"
+                        className={`skill-chip-icon ${(skill.name === 'Network Security' || skill.name === 'Web Security' || skill.name === 'Penetration Testing' || skill.name === 'OSINT' || skill.name === 'Cryptography') ? 'green-png-icon' : ''}`}
                         loading="lazy"
                       />
                     ) : (
