@@ -57,6 +57,15 @@
   flex-shrink: 0;
 }
 
+.contact-link-icon svg {
+  color: var(--neon-green);
+  transition: var(--transition-fast);
+}
+
+.contact-link-item:hover .contact-link-icon svg {
+  filter: drop-shadow(0 0 4px rgba(0, 255, 65, 0.6));
+}
+
 .contact-link-text {
   display: flex;
   flex-direction: column;
