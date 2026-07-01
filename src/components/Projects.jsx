@@ -5,13 +5,11 @@ import './Projects.css';
 
 const PROJECTS = [
   {
-    icon: '🔍',
     title: 'Port Vulnerability Scanner',
     description:
       'A security tool that scans network ports to identify open services and potential vulnerabilities. Helps security professionals and system administrators assess network exposure and strengthen defenses.',
-    tags: ['Python', 'Networking', 'Cybersecurity', 'CLI'],
-    github: 'https://github.com/MaverickTheFirst',
-    featured: true,
+    tags: ['Python', 'Networking', 'Cybersecurity'],
+    github: 'https://github.com/MaverickTheFirst/Port-Vulnerability-Checker',
   },
 ];
 
@@ -35,7 +33,6 @@ export default function Projects() {
             <TiltCard
               key={project.title}
               className={`project-card reveal reveal-delay-${index + 1}`}
-              glowColor="0, 255, 255"
             >
               <div className="project-card-header">
                 <div className="project-card-icon">{project.icon}</div>
